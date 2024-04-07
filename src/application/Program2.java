@@ -20,9 +20,15 @@ public class Program2 {
         List<Department> list = departmentDao.findAll();
         list.forEach(System.out::println);
 
-        System.out.println("\n============ TEST 3: seller insert =============");
-        Department newDepartment = new Department(null, "Toys");
-        departmentDao.insert(newDepartment);
-        System.out.println("Inserted! New Id = " + newDepartment.getId());
+//        System.out.println("\n============ TEST 3: seller insert =============");
+//        Department newDepartment = new Department(null, "Toys");
+//        departmentDao.insert(newDepartment);
+//        System.out.println("Inserted! New Id = " + newDepartment.getId());
+
+        System.out.println("\n============ TEST 4: department update =============");
+        department = departmentDao.findById(1);
+        department.setName("Kitchen");
+        departmentDao.update(department);
+        System.out.println("Update completed!");
     }
 }
